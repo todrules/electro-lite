@@ -1,0 +1,8 @@
+article.article-content {
+  width: calc(100vw - (20px + 16vw));
+  position: absolute;
+  top: 0;
+  left: calc(20px + 16vw);
+  z-index: 0;
+  height: calc(100vh - (40px + 2.25vh));
+}

@@ -1,0 +1,46 @@
+@import "../../../styles/imports";
+
+
+
+app-icon i {
+  font-size: calc(16px + 1.2vmin);
+  cursor: pointer;
+  line-height: inherit;
+}
+
+app-icon {
+  transition: color .3s;
+}
+
+@mixin appicon() {
+  
+  @each $key, $value in $colors {
+    
+    app-icon[color="#{$key}"] i {
+      color: map-get(map-get($colors, $key), base);
+    }
+    app-icon[color="#{$key}"]:hover {
+      color: color-shade(map-get(map-get($colors, $key), base), -0.1);
+    }
+  
+    app-icon[contrast="#{$key}"] i {
+      color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+    }
+    app-icon[contrast="#{$key}"]:hover {
+      color: contrastinator(color-shade(map-get(map-get($colors, $key), base), -0.1), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+    }
+    
+  }
+  
+  app-icon[small] i {
+    font-size: calc(12px + 1vmin);
+  }
+  
+  app-icon[lrg] i {
+    font-size: calc(20px + 1.5vmin);
+  }
+  
+}
+
+@include appicon();
+

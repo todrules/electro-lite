@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -13,23 +12,48 @@ import { CarService } from './service/carservice';
 import { CountryService } from './service/countryservice';
 import { EventService } from './service/eventservice';
 import { NodeService } from './service/nodeservice';
+import { ComponentsModule } from '../../shared/components/components.module';
+import { CoreModule } from '../../core/core.module';
+import { StateModule } from '../../core/state/state.module';
+import { SharedModule } from '../../shared/shared.module';
+import { ViewsModule } from '../../views/views.module';
+
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule.forRoot(),
+    StateModule.forRoot(),
+    SharedModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ComponentsModule,
+    ViewsModule
+  ],
+  providers: [
+     CarService, CountryService, EventService, NodeService
+  ],
   declarations: [
     AppComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
+  exports: [
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    ComponentsModule,
+    AppComponent,
+    HomeComponent,
+    StateModule,
+    SharedModule,
+    ViewsModule
   ],
-  providers: [
-      { provide: LocationStrategy, useClass: HashLocationStrategy },
-      CarService,CountryService,EventService,NodeService
+  entryComponents: [
+  
   ],
   bootstrap: [AppComponent]
 })

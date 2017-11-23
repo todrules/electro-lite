@@ -1,0 +1,68 @@
+$colors: (
+  primary: (
+    base: #861657,
+    contrast: #FBFCFF
+  ),
+  secondary: (
+    base: #23B5D3,
+    contrast: #FBFCFF
+  ),
+  accent: (
+    base: #C8FFBE,
+    contrast: #343434
+  ),
+  danger: (
+    base: #FF3366,
+    contrast: #FBFCFF
+  ),
+  success: (
+    base: #B0FF92,
+    contrast: #343434
+  ),
+  sunset: (
+    base: #FFBC42,
+    contrast: #FBFCFF
+  ),
+  sunshine: (
+    base: #E7E247,
+    contrast: #343434
+  ),
+  sky: (
+    base: #759EB8,
+    contrast: #343434
+  ),
+  lilac: (
+    base: #EC91D8,
+    contrast: #FBFCFF
+  ),
+  merlot: (
+    base: #3C1642,
+    contrast: #FBFCFF
+  ),
+  shadow: (
+    base: #3D3B30,
+    contrast: #FBFCFF
+  ),
+  light: (
+    base: #FBFCFF,
+    contrast: #343434
+  ),
+  dark: (
+    base: #0D1321,
+    contrast: #FBFCFF
+  )
+);
+
+$chartcolors:(
+sky: "#67b7dc",
+canary: "#fdd400",
+grn: "#84b761",
+cherry: "#cc4748",
+ltred: "#cd82ad",
+dkblue: "#2f4074",
+dkgrn: "#448e4d",
+mustard: "#b7b83f",
+brntorg: "#b9783f",
+dkred: "#b93e3d",
+ppl: "#913167"
+);

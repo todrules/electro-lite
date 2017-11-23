@@ -1,0 +1,39 @@
+@import "../../../styles/imports";
+
+aside.sidemenu-container {
+  width: calc(20px + 16vw);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: calc(100vh - (41px + 2.25vh));
+  
+}
+
+@mixin sidemenu-themes() {
+
+  side-menu[theme="light"] menu-container aside.sidemenu-container {
+    background-color: color-shade(map-get(map-get($colors, light), base), 0.5);
+  //  background: color-shade(map-get(map-get($colors, light), base), 0.5) url('/assets/images/white_bg_movable.png') repeat 0 0;
+    color: contrastinator(color-shade(map-get(map-get($colors, light), base), 0.5), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+    border-right: 1px solid color-shade(map-get(map-get($colors, light), base), -0.1);
+  }
+  
+  side-menu[theme="dark"] menu-container aside.sidemenu-container {
+    color: contrastinator(color-shade(map-get(map-get($colors, shadow), base), -0.1), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+  //  background: map-get(map-get($colors, shadow), base) url('/assets/images/dark_bg.png') repeat 0 0;
+    background-color: color-shade(map-get(map-get($colors, shadow), base), -0.1);
+    border-right: 1px solid color-shade(map-get(map-get($colors, light), base), -0.1);
+  }
+}
+
+@include sidemenu-themes();
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

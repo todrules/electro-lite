@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.avatar {
+	border-radius: 4px;
+	width: 80px;
+	border: 1px solid map_get(map_get($colors, light), base);
+	opacity: 0.85;
+  margin: 0;
+  padding: 0;
+}
+
+.avatar-md {
+	border-radius: 100%;
+	width: 60px;
+	border: 2px solid map_get(map_get($colors, dark), base);
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+	opacity: 0.85;
+}
+
+.avatar-sm {
+	border-radius: 100%;
+	width: 40px;
+	border: 2px solid map_get(map_get($colors, dark), base);
+	opacity: 0.85;
+}

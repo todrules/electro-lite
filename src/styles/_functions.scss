@@ -1,0 +1,167 @@
+@import "variables";
+
+@function color-error($color-value, $color-name: null) {
+	$error-msg: "The value `#{$color-value}` must be a color.";
+
+	@if ($color-name) {
+		$error-msg: "
+    The map color `#{$color-name}` is not defined.
+    Please make sure the color exists in your
+    `$theme-colors` map.
+    For example:
+    $theme-colors: (
+      #{$color-name}:    #327eff
+    );";
+	}
+	
+	@error $error-msg;
+	
+	@return null;
+}
+
+@function contrastinator($color-value, $cont-color1, $cont-color2) {
+	@if (type-of($color-value) != color) {
+		@return color-error($color-value);
+	}
+	$brightness: (((red($color-value) * .299 + green($color-value) * .587 + blue($color-value) * .114)));
+	
+	$contrast1: (((red($cont-color1) * .299 + green($cont-color1) * .587 + blue($cont-color1) * .114)));
+	$contrast2: (((red($cont-color2) * .299 + green($cont-color2) * .587 + blue($cont-color2) * .114)));
+	
+	$d1: abs($brightness - $contrast1);
+	$d2: abs($brightness - $contrast2);
+	
+	@if ($d1 >= $d2) {
+		@return $cont-color1;
+	} @else {
+		@return $cont-color2;
+	}
+}
+
+@function color-shade($color-value, $amount:0.1) {
+	@if (type-of($color-value) != color) {
+		@return color-error($color-value);
+	}
+	$t: 0;
+	$p: $amount;
+	@if ($amount < 0) {
+		$t: 0;
+		$p: $amount * -1;
+	} @else {
+		$t: 255;
+		$p: $amount;
+	}
+	$R: red($color-value);
+	$G: green($color-value);
+	$B: blue($color-value);
+	
+	@return rgb((round(($t - $R) * $p) + $R), (round(($t - $G) * $p) + $G), (round(($t - $B) * $p) + $B));
+}
+
+@function copy-colors($colors-map) {
+	@return map-merge($colors-map, ());
+}
+
+
+
+@function color-brightness($color-value) {
+	@if (type-of($color-value) != color) {
+		@return color-error($color-value);
+	}
+	
+	@return (red($color-value) * .299 + green($color-value) * .587 + blue($color-value) * .114) / 255 * 100%;
+}
+
+@function color-inverse($color-value, $dark: #000, $light: #fff) {
+	$dark: map_get(map_get($colors, dark), base);
+	$light: map_get(map_get($colors, light), base);
+	@return contrastinator($color-value, $dark, $light);
+}
+
+
+// Copy Colors Map
+// --------------------------------------------------
+
+@function copy-colors($colors-map) {
+	@return map-merge($colors-map, ());
+}
+
+// String Replace Function
+// --------------------------------------------------
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+	
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	
+	@return $string;
+}
+
+// String Split Function
+// --------------------------------------------------
+
+@function str-split($string, $separator) {
+	// empty array/list
+	$split-arr: ();
+	// first index of separator in string
+	$index: str-index($string, $separator);
+	// loop through string
+	@while $index != null {
+		// get the substring from the first character to the separator
+		$item: str-slice($string, 1, $index - 1);
+		// push item to array
+		$split-arr: append($split-arr, $item);
+		// remove item and separator from string
+		$string: str-slice($string, $index + 1);
+		// find new index of separator
+		$index: str-index($string, $separator);
+	}
+	// add the remaining string to list (the last item)
+	$split-arr: append($split-arr, $string);
+	
+	@return $split-arr;
+}
+
+// Str extract between start and end
+// --------------------------------------------------
+
+@function str-extract($string, $start, $end) {
+	$start-index: str-index($string, $start);
+	
+	@if $start-index {
+		$post: str-slice($string, $start-index + str-length($start));
+		$end-index: str-index($post, $end);
+		
+		@if $end-index {
+			@return str-slice($post, 1, $end-index - 1);
+		}
+	}
+	
+	@return null;
+}
+
+// URL Encode Function
+// --------------------------------------------------
+
+@function url-encode($val) {
+	$spaces: str-replace($val, " ", "%20");
+	$encoded: str-replace($spaces, "#", "%23");
+	@return $encoded;
+}
+
+// Fetch nested keys
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Keys to fetch
+// @return {*}
+// --------------------------------------------------
+
+@function map-fetch($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+	
+	@return $map;
+}
+

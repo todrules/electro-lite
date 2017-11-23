@@ -1,0 +1,45 @@
+@import "functions";
+@import "variables";
+@import "colors";
+
+
+
+@mixin util-colors() {
+	@each $key, $value in $colors {
+		.text-#{$key} {
+			color: map-get($value, base);
+		}
+		.bg-#{$key} {
+			background-color: map-get($value, base);
+		}
+	}
+}
+
+@mixin bg-gradient($colorStart, $colorStop) {
+	background-image: -webkit-linear-gradient(135deg, $colorStart 0, $colorStop 100%); /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(135deg, $colorStart 0, $colorStop 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin navbar-colors() {
+
+	@each $key, $value in $colors {
+
+			app-header[color="#{$key}"] header {
+				background-color: map-get(map-get($colors, $key), base);
+				color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+			}
+			app-header[color="#{$key}"] header a {
+				color: map-get(map-get($colors, $key), contrast);
+			}
+			app-header[color="#{$key}"] header a:hover {
+				background-color: color-shade(map-get(map-get($colors, $key), base), 0.5);
+				color: contrastinator(color-shade(map-get(map-get($colors, $key), base), 0.5), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+			}
+
+			app-header[color="#{$key}"] header .header-title {
+				color: map-get(map-get($colors, $key), contrast);
+			}
+
+	}
+}
+
