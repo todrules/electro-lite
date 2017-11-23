@@ -1,0 +1,32 @@
+<div style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; opacity: 0; background-color: rgba(0,0,0,0.15); z-index: 99; padding: 2vh 2vw;" (click)="overlayClick($event)" *ngIf="isVisible"
+     [@popover]="popoverState"
+     >
+  <div [ngStyle]="{'top': y, 'left': (x - 300)}" style="min-width: 200px; min-height: 200px; background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 100;  margin: 0 auto; opacity: 0;
+     max-width: 700px; box-shadow: 2px 4px 25px rgba(122,122,122,0.15), -1px -1px 3px rgba(122,122,122,0.15); border-radius: 4px; padding: 8px; font-family: 'Hasklig', 'Source Code Pro', 'Fira Code', 'Courier New', Courier, monospace; pointer-events: all;"
+       [@popover]="popoverState"
+        (click)="popoverClick()">
+    
+    {{'{'}}<br>
+    &nbsp;&nbsp;isLoading: {{state.isLoading}},<br>
+    &nbsp;&nbsp;pageTitle: {{state.isLoading}},<br>
+    &nbsp;&nbsp;sideNav: {{'{'}}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;state: {{state.sideNav.state}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;isOpen: {{state.sideNav.isOpen}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;displayHeader: {{state.sideNav.displayHeader}}<br>
+    &nbsp;&nbsp;{{'}'}},<br>
+    &nbsp;&nbsp;user: {{'{'}}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;isAuth: {{state.user.isAuth}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;email: {{state.user.email}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;password: {{state.user.password}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;name: {{'{'}}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstName: {{state.user.name.firstName}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastName: {{state.user.name.lastName}},<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nickName: {{state.user.name.nickName}}<br>
+    &nbsp;&nbsp;{{'}'}}<br>
+    {{'}'}}<br>
+  </div>
+</div>
+
+

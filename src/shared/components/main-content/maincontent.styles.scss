@@ -1,0 +1,7 @@
+main.content-container {
+  width: 100vw;
+  position: absolute;
+  top: calc(40px + 2.25vh);
+  left: 0;
+  height: calc(100vh - (40px + 2.25vh));
+}

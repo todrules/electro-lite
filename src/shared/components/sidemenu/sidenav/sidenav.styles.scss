@@ -1,0 +1,64 @@
+@import "../../../../styles/imports";
+
+nav.sidenav {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  background-color: color-shade(map_get(map_get($colors, accent), base), -0.2);
+}
+
+.sidenav-menu {
+  width: 100%;
+  height: 100%;
+
+}
+
+.section-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: $text-color;
+  padding-left: 4px;
+  margin-bottom: 4px
+}
+
+.menu-link-container {
+  width: 100%;
+  height: 54px;
+  padding: 12px;
+  color: $text-color;
+  cursor: pointer;
+}
+
+.menu-link-container:hover {
+  transform: translateX(10px);
+}
+
+.menu-link-icon {
+  color: color-shade(map_get(map_get($colors, accent), base), -0.2);
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.menu-link-title {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 14px;
+  font-kerning: normal;
+}
+
+.menu-link-icon.closed {
+  margin-left: 190px;
+}
+
+.menu-link-container.active {
+  border-left: 4px solid color-shade(map_get(map_get($colors, accent), base), -0.2);
+}
+
+.menu-link-container.active .menu-link-icon {
+  margin-left: 4px;
+}

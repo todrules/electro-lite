@@ -1,0 +1,59 @@
+@import "variables";
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Roboto Light"), local("Roboto-Light"), url("#{$roboto-font-path}/roboto-light.woff2") format("woff2"), url("#{$roboto-font-path}/roboto-light.woff") format("woff"), url("#{$roboto-font-path}/roboto-light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Roboto"), local("Roboto-Regular"), url("#{$roboto-font-path}/roboto-regular.woff2") format("woff2"), url("#{$roboto-font-path}/roboto-regular.woff") format("woff"), url("#{$roboto-font-path}/roboto-regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	src: local("Roboto Medium"), local("Roboto-Medium"), url("#{$roboto-font-path}/roboto-medium.woff2") format("woff2"), url("#{$roboto-font-path}/roboto-medium.woff") format("woff"), url("#{$roboto-font-path}/roboto-medium.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	src: local("Roboto Bold"), local("Roboto-Bold"), url("#{$roboto-font-path}/roboto-bold.woff2") format("woff2"), url("#{$roboto-font-path}/roboto-bold.woff") format("woff"), url("#{$roboto-font-path}/roboto-bold.ttf") format("truetype");
+}
+
+$noto-sans-font-path: $font-path;
+
+@font-face {
+	font-family: "Segoe UI";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Segoe UI Light"), local("Segoe-UI-Light"), url("#{$noto-sans-font-path}/SegoeUI-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Segoe UI";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Segoe UI"), local("Segoe-UI-Regular"), url("#{$noto-sans-font-path}/SegoeUI-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Segoe UI";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Segoe UI Medium"), local("Segoe-UI-Medium"), url("#{$noto-sans-font-path}/SegoeUI-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Segoe UI";
+	font-style: normal;
+	font-weight: 600;
+	src: local("Segoe UI Bold"), local("Segoe-UI-Bold"), url("#{$noto-sans-font-path}/SegoeUI-SemiBold.ttf") format("truetype");
+}

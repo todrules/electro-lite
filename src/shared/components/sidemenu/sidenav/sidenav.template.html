@@ -1,0 +1,18 @@
+
+  <div class="sidenav-menu" fxLayout="column" fxLayoutAlign="start start">
+    <div *ngFor="let section of menuItems.sections" style="margin-bottom: 18px;">
+      
+      <div class="section-title">{{section?.title}}</div>
+      
+      <div *ngFor="let link of section.links" style="width: 100%;">
+        <div class="menu-link-container" [ngClass]="{'active': link.active}" fxLayout="row" fxLayoutAlign="start end">
+          
+          <i [ngClass]="link.icon" class="menu-link-icon"></i>
+          <span class="menu-link-title" >{{link.title}}</span>
+        
+        </div>
+      </div>
+    
+    </div>
+  </div>
+

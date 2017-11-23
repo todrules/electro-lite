@@ -1,0 +1,59 @@
+@import "../../../styles/imports";
+
+fab-icon i {
+	font-size: calc(16px + 1.2vmin);
+	cursor: pointer;
+	line-height: inherit;
+}
+
+fab-icon {
+	transition: color .3s;
+}
+
+@mixin fabicon() {
+	
+	@each $key, $value in $colors {
+		
+		fab-icon[color="#{$key}"] button app-icon i {
+			color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+		fab-icon[color="#{$key}"] button app-icon:hover {
+			color: contrastinator(color-shade(map-get(map-get($colors, $key), base), -0.1), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+		
+		fab-icon[color="#{$key}"] button {
+			background-color: map-get(map-get($colors, $key), base);
+		}
+		fab-icon[color="#{$key}"] button:hover {
+			background-color: color-shade(map-get(map-get($colors, $key), base), -0.1);
+		}
+		
+		
+		fab-icon[contrast="#{$key}"] app-icon i {
+			color: map-get(map-get($colors, $key), base);
+		}
+		fab-icon[contrast="#{$key}"] app-icon:hover {
+			color: color-shade(map-get(map-get($colors, $key), base), -0.1);
+		}
+		
+		fab-icon[contrast="#{$key}"] button {
+			background-color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));;
+		}
+		fab-icon[contrast="#{$key}"] button:hover {
+			background-color: contrastinator(color-shade(map-get(map-get($colors, $key), base), -0.1), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+		
+	}
+	
+	fab-icon[small] i {
+		font-size: calc(12px + 1vmin);
+	}
+	
+	fab-icon[lrg] i {
+		font-size: calc(20px + 1.5vmin);
+	}
+	
+}
+
+@include fabicon();
+
