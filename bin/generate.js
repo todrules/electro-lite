@@ -119,19 +119,23 @@ function generateModule(modulename) {
   const Name = capitalize(modulename);
   let template = `import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   imports: [
-    CommonModule,
-  //  SharedModule
+    CommonModule
   ],
   declarations: [
   
   ],
+  providers: [
+  
+  ],
+  entryComponents: [
+  
+  ],
   exports: [
-    CommonModule,
-  //  SharedModule
+    CommonModule
   ]
 })
 export class ${Name}Module {

@@ -15,6 +15,8 @@ import { ViewContent } from './view-content/view-content.component';
 import { PageTitle } from './pagetitle/pagetitle.component';
 import { ToolbarLogo } from './toolbar/logo/toolbar-logo.component';
 import { ToolbarMenu } from './toolbar/menu/toolbar-menu.component';
+import { StatsComponent } from './stats/stats.component';
+import { CardModule } from './card/card.module';
 
 @NgModule({
   imports: [
@@ -22,7 +24,8 @@ import { ToolbarMenu } from './toolbar/menu/toolbar-menu.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    SideMenuModule
+    SideMenuModule,
+    CardModule
   ],
   declarations: [
     ToolbarComponent,
@@ -36,7 +39,8 @@ import { ToolbarMenu } from './toolbar/menu/toolbar-menu.component';
     FabIcon,
     PageTitle,
     ToolbarLogo,
-    ToolbarMenu
+    ToolbarMenu,
+    StatsComponent
   ],
   exports: [
     CommonModule,
@@ -55,7 +59,9 @@ import { ToolbarMenu } from './toolbar/menu/toolbar-menu.component';
     FabIcon,
     PageTitle,
     ToolbarLogo,
-    ToolbarMenu
+    ToolbarMenu,
+    StatsComponent,
+    CardModule
   ],
   entryComponents: [
     OverlayComponent,

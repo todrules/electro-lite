@@ -1,0 +1,29 @@
+@import "../../../styles/variables";
+@import "../../../styles/functions";
+
+.stat {
+	font-size: 2em;
+	font-weight: 600;
+	margin-left: 20px;
+}
+
+
+@mixin stat-colors() {
+	
+	@each $key, $value in $colors {
+		
+		stats-comp[color="#{$key}"] {
+			background-color: color-shade(map-get(map-get($colors, $key), base), 0.3);
+			color: contrastinator(color-shade(map-get(map-get($colors, $key), base), 0.3), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+		stats-comp[color="#{$key}"] div .icon-panel {
+			background-color: map-get(map-get($colors, $key), base);
+			color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+		stats-comp[color="#{$key}"] div div span .stat {
+			color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+	}
+}
+
+@include stat-colors();

@@ -36,7 +36,7 @@ nav.sidenav {
 }
 
 .menu-link-icon {
-  color: color-shade(map_get(map_get($colors, accent), base), -0.2);
+//  color: color-shade(map_get(map_get($colors, accent), base), -0.2);
   font-size: 24px;
   height: 24px;
   width: 24px;
@@ -62,3 +62,20 @@ nav.sidenav {
 .menu-link-container.active .menu-link-icon {
   margin-left: 4px;
 }
+
+@mixin sidemenu-color() {
+  
+  @each $key, $value in $colors {
+    
+    side-menu[color="#{$key}"] .menu-link-icon {
+      color: map-get(map-get($colors, $key), base);
+    }
+  
+    side-menu[color="#{$key}"] .menu-link-container.active {
+      border-left: 4px solid color-shade(map_get(map_get($colors, $key), base), -0.2);
+    }
+    
+  }
+}
+
+@include sidemenu-color();
