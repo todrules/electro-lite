@@ -1,5 +1,3 @@
-@import 'assets/showcase/css/primeng.css';
-@import 'assets/showcase/css/code.css';
 @import "styles/colors";
 @import "styles/variables";
 @import "styles/mixins";
@@ -13,12 +11,16 @@
 @import "shared/components/appicon/appicon.styles";
 // Avatar
 @import "shared/components/avatar/avatar.styles";
+// Card
+@import "shared/components/card/card.styles";
 // Fab-icon
 @import "shared/components/fabicon/fabicon.styles";
 // Main Content
 @import "shared/components/main-content/maincontent.styles";
 // Page Title
 @import "shared/components/pagetitle/pagetitle.styles";
+// Preloader
+@import "shared/components/preloader/preloader.styles";
 // Sidemenu
 @import "shared/components/sidemenu/sidemenu.styles";
 @import "shared/components/sidemenu/menucontainer/menucontainer.styles";
@@ -34,9 +36,15 @@
 // View Content
 @import "shared/components/toolbar/menu/toolbar-menu.styles";
 
-
+@import "app/views/public/login/login.styles";
+@import "app/views/public/signup/signup.styles";
 
 /*  ----------------------------------------------------------------------------------------------------- */
+
+* {
+	box-sizing: border-box;
+}
+
 html {
 	width: 100vw;
 	height: 100vh;

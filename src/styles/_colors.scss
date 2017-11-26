@@ -1,55 +1,63 @@
 $colors: (
   primary: (
-    base: #861657,
-    contrast: #FBFCFF
+    base: #0075C4,
+    contrast: #F4F4F8
   ),
   secondary: (
-    base: #23B5D3,
-    contrast: #FBFCFF
+    base: #8FC93A,
+    contrast: #F4F4F8
   ),
   accent: (
-    base: #C8FFBE,
-    contrast: #343434
+    base: #0A2472,
+    contrast: #F4F4F8
   ),
   danger: (
-    base: #FF3366,
-    contrast: #FBFCFF
+    base: #DB3069,
+    contrast: #F4F4F8
   ),
   success: (
-    base: #B0FF92,
-    contrast: #343434
+    base: #4CB944,
+    contrast: #F4F4F8
   ),
   sunset: (
-    base: #FFBC42,
-    contrast: #FBFCFF
+    base: #FF9505,
+    contrast: #F4F4F8
   ),
   sunshine: (
-    base: #E7E247,
-    contrast: #343434
+    base: #F5D547,
+    contrast: #11270B
   ),
   sky: (
-    base: #759EB8,
-    contrast: #343434
+    base: #00A6FB,
+    contrast: #F4F4F8
   ),
   lilac: (
-    base: #EC91D8,
-    contrast: #FBFCFF
+    base: #EFBDEB,
+    contrast: #11270B
   ),
   merlot: (
-    base: #3C1642,
-    contrast: #FBFCFF
+    base: #434371,
+    contrast: #F4F4F8
   ),
+	light: (
+		base: #F4F4F8,
+		contrast: #11270B
+	),
+  platinum: (
+    base: #E6E6EA,
+    contrast: #11270B
+  ),
+	smoke: (
+		base: #BFC0C0,
+		contrast: #11270B
+	),
   shadow: (
-    base: #3D3B30,
-    contrast: #FBFCFF
-  ),
-  light: (
-    base: #FBFCFF,
-    contrast: #343434
+    base: #46494C,
+    contrast: #F4F4F8
   ),
   dark: (
-    base: #0D1321,
-    contrast: #FBFCFF
+    base: #11270B,
+    contrast: #F4F4F8
   )
 );
 
