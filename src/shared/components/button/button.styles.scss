@@ -1,0 +1,33 @@
+@import "../../../styles/imports";
+
+button[app-button] {
+	font-weight: 400;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	padding: 8px 15px;
+	box-shadow: 1px 1px 4px map-get(map-get($colors, platinum), base);
+	border-radius: 4px;
+	margin: 0.5vh 0;
+	margin-right: 0.5vw;
+	min-width: 80px;
+}
+
+
+@mixin button() {
+	
+	@each $key, $value in $colors {
+		
+		button[app-button][color="#{$key}"] {
+			background-color: map-get(map-get($colors, $key), base);
+			color: map-get(map-get($colors, $key), contrast);
+		}
+		
+		button[app-button][contrast="#{$key}"] {
+			background-color: map-get(map-get($colors, $key), base);
+			color: map-get(map-get($colors, $key), contrast);
+		}
+	}
+	
+}
+
+@include button();

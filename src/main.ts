@@ -1,4 +1,4 @@
-import './assets/scripts/modernizr.js';
+// import './assets/scripts/modernizr.js';
 
 // Observable class extensions
 import 'rxjs/add/observable/of';
