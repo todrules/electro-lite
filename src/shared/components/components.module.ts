@@ -17,6 +17,7 @@ import { ToolbarLogo } from './toolbar/logo/toolbar-logo.component';
 import { ToolbarMenu } from './toolbar/menu/toolbar-menu.component';
 import { StatsComponent } from './stats/stats.component';
 import { CardModule } from './card/card.module';
+import { FormModule } from './form/form.module';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { CardModule } from './card/card.module';
     ReactiveFormsModule,
     FlexLayoutModule,
     SideMenuModule,
-    CardModule
+    CardModule,
+    FormModule
   ],
   declarations: [
     ToolbarComponent,
@@ -61,7 +63,8 @@ import { CardModule } from './card/card.module';
     ToolbarLogo,
     ToolbarMenu,
     StatsComponent,
-    CardModule
+    CardModule,
+    FormModule
   ],
   entryComponents: [
     OverlayComponent,
