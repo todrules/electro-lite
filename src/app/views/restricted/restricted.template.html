@@ -1,0 +1,32 @@
+<app-container>
+  <app-toolbar color="primary">
+    
+    <ng-container start>
+      <div class="spacer">&nbsp;</div>
+      <div>
+        <app-icon name="ion-navicon" contrast="primary" (click)="toggleSidenav()"></app-icon>
+      </div>
+      <div class="spacer">&nbsp;</div>
+      <div>
+        <toolbar-logo link="'/'" source="assets/images/electro.png"></toolbar-logo>
+      </div>
+    </ng-container>
+    
+    <ng-container center>
+      <page-title size="6" contrast="primary"></page-title>
+    </ng-container>
+    
+    <ng-container end>
+      <toolbar-menu></toolbar-menu>
+      <div class="spacer">&nbsp;</div>
+    </ng-container>
+  
+  </app-toolbar>
+  <main-content>
+    <side-menu theme="light" color="secondary"></side-menu>
+    <view-content>
+      <router-outlet></router-outlet>
+    </view-content>
+    <fab-icon color="accent"></fab-icon>
+  </main-content>
+</app-container>

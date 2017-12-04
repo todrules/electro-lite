@@ -1,0 +1,52 @@
+@import "../../../../styles/imports";
+
+text-input {
+	width: 100%;
+}
+
+text-input input {
+	box-sizing: border-box;
+	padding: 0.5vh 0.7vw;
+	margin: 0.5vh 0.5vh;
+	border-radius: 3px;
+	border: none;
+	border: 1px solid rgba(122, 122, 122, 0.5);
+	width: 100%;
+	min-width: 200px;
+	background: none;
+	position: relative;
+	left: 0;
+	outline: none;
+	//	animation: placeholder-in 300ms ease-in;
+}
+
+text-input input:focus {
+	//	animation: placeholder-out 300ms ease-in;
+	border: 1px solid color-shade(map-get(map-get($colors, primary), base), 0.1);
+	box-shadow: 2px 2px 2px 0 rgba(color-shade(map-get(map-get($colors, primary), base), 0.1), 0.3), -2px -2px 2px 0 rgba(color-shade(map-get(map-get($colors, primary), base), 0.1), 0.3);
+}
+
+text-input input::placeholder {
+	opacity: 1;
+}
+
+text-input input:focus::placeholder {
+	opacity: 0;
+}
+
+text-input input.ng-touched.ng-invalid {
+	
+	border: 1px solid color-shade(map-get(map-get($colors, danger), base), 0.1);
+	box-shadow: 2px 2px 2px 0 rgba(color-shade(map-get(map-get($colors, danger), base), 0.1), 0.3), -2px -2px 2px 0 rgba(color-shade(map-get(map-get($colors, danger), base), 0.1), 0.3);
+}
+
+.alert-danger {
+	color: map-get(map-get($colors, danger), base);
+	background: none;
+	border-radius: 3px;
+	margin: 0;
+	margin-left: 2vw;
+	width: auto;
+	font-size: calc(10px + 0.25vmin);
+	padding: 0;
+}

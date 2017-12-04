@@ -1,0 +1,5 @@
+@import "../../../../styles/imports";
+
+.signup-bg {
+	background-image: linear-gradient(135deg, color-shade(map-get(map-get($colors, primary), base), -0.3), color-shade(map-get(map-get($colors, primary), base), 0.3));
+}

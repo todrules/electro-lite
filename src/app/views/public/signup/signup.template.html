@@ -1,0 +1,22 @@
+<app-container tyle="padding-top: 0; width: 100%; height: 100%;" fxLayout="row"
+               fxLayoutAlign="center center" >
+    <div style="width: 100%; height: 100%;" fxLayout="column" fxLayoutAlign="start center" class="signup-bg">
+      <h1 style="font-size: 48px; font-family: 'Arial Rounded MT Bold', Arial, serif; color: #000;">login</h1>
+      
+      <app-card style="max-width: 500px; min-width: 400px;">
+        <card-header>
+          <card-title>Please sign in...</card-title>
+        </card-header>
+        <card-content>
+              content here
+        </card-content>
+        <card-footer>
+          <div style="width: 100%; text-align: center;">
+            <p>New user? Please <span (click)="gotoSignup(e)"
+                                      style="cursor: pointer; text-decoration: underline;">Signup</span> first.</p>
+          </div>
+        </card-footer>
+        
+      </app-card>
+    </div>
+</app-container>

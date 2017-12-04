@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="size">
+  <h1 *ngSwitchCase="1">{{title}}</h1>
+  <h2 *ngSwitchCase="2">{{title}}</h2>
+  <h3 *ngSwitchCase="3">{{title}}</h3>
+  <h4 *ngSwitchCase="4">{{title}}</h4>
+  <h5 *ngSwitchCase="5">{{title}}</h5>
+  <h6 *ngSwitchCase="6">{{title}}</h6>
+  <span *ngSwitchDefault>{{title}}</span>
+</ng-container>

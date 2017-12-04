@@ -1,0 +1,37 @@
+<div col content-end align-start>
+  <div row content-end align-center nowrap>
+    
+    <div col content-start align-start>
+      <label [for]="[inputId]">
+        {{label}}
+      </label>
+    </div>
+    <div col content-end align-center>
+      <input
+        [id]="[inputId]"
+        [(ngModel)]="model.value"
+        [type]="[type]"
+        [placeholder]="[placeholder]"
+        [required]="[required]"
+        #value="ngModel"
+        name="value"
+        [minlength]="[min]"
+        [maxlength]="[max]">
+    </div>
+  </div>
+  <user-msg *ngIf="value.invalid && value.touched" class="alert-danger"
+            [invalid]="value?.invalid"
+            [valid]="value?.valid"
+            [touched]="value?.touched"
+            [dirty]="value?.dirty"
+            [pristine]="value?.pristine"
+            [disabled]="value?.disabled"
+            [required]="value?.errors?.required"
+            [minlength]="value?.errors?.minlength"
+            [maxlength]="value?.errors?.maxlength"
+            [email]="value?.errors?.email"
+            [min]="[min]" [max]="[max]">
+
+  </user-msg>
+</div>
+

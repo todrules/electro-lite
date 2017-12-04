@@ -1,0 +1,32 @@
+@import "../../../../styles/imports";
+
+card-subtitle h6 {
+	margin: 0.8vmin;
+	font-size: calc(14px + 0.5vmin);
+	color: map-get(map-get($colors, dark), base);
+}
+
+card-subtitle[theme="light"] h6 {
+	color: map-get(map-get($colors, dark), base);
+}
+
+card-subtitle[theme="dark"] h6 {
+	color: map-get(map-get($colors, light), base);
+}
+
+@mixin cardsubtitle() {
+	
+	@each $key, $value in $colors {
+		
+		card-subtitle[color="#{$key}"] h6 {
+			color: map-get(map-get($colors, $key), base);
+		}
+		
+		card-subtitle[contrast="#{$key}"] h6 {
+			color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+	}
+	
+}
+
+@include cardsubtitle();

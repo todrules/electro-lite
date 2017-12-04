@@ -1,0 +1,91 @@
+toolbar-menu ul {
+	display: inline-block;
+	list-style-type: none;
+	float: right;
+	margin: 0 60px 0 0;
+	padding: 0;
+	height: 100%;
+}
+
+toolbar-menu ul > li {
+	display: inline-block;
+	height: 100%;
+}
+
+toolbar-menu ul > li > a {
+	text-decoration: none;
+	color: #ffffff;
+	transition: background-color .3s;
+	min-width: 120px;
+	display: inline-block;
+	text-align: center;
+	box-sizing: border-box;
+	height: 100%;
+	line-height: 70px;
+}
+
+toolbar-menu ul > li > a:hover {
+	background-color: #4a4f52;
+}
+
+toolbar-menu ul > li > ul {
+	display: none;
+}
+
+toolbar-menu ul > litoolbar-menu-themes {
+	position: relative;
+}
+
+toolbar-menu ul > litoolbar-menu-themes > ul {
+	position: absolute;
+	top: 65px;
+	left: -50px;
+	width: 200px;
+	max-height: 300px;
+	background-color: #ffffff;
+	-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+	overflow: auto;
+	list-style-type: none;
+	padding: 15px 0;
+	margin: 0;
+	border-radius: 3px;
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+	animation-duration: .5s;
+}
+
+toolbar-menu ul > litoolbar-menu-themes > ul > litoolbar-submenu-header {
+	padding: 6px 12px;
+	font-weight: bold;
+	text-align: left;
+	background-image: linear-gradient(to left, #2bc0ec, #1b81d7);
+	color: #ffffff;
+}
+
+toolbar-menu ul > litoolbar-menu-themes > ul a {
+	text-decoration: none;
+	color: #404C51;
+	padding: 6px 12px;
+	display: block;
+	transition: all 0.5s ease;
+}
+
+toolbar-menu ul > litoolbar-menu-themes > ul a:hover {
+	background-color: #eeeeee;
+}
+
+toolbar-menu ul > litoolbar-menu-themes > ul a img {
+	width: 32px;
+	vertical-align: middle;
+}
+
+toolbar-menu ul > litoolbar-menu-themes > ul a .ui-text {
+	vertical-align: middle;
+	margin-left: 8px;
+}
+
+toolbar-menu ul > litoolbar-menu-themes:hover > ul {
+	display: block;
+}

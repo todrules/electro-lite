@@ -1,0 +1,45 @@
+<div row content-padded align-start nowrap>
+  <app-card style="width: 50%; padding: 0.5vh 0.5vw; margin: 2vh 2vw;">
+    
+    <amCharts
+      id="chartdiv1"
+      [options]="options"
+      [style.width.%]="100"
+      [style.height.vh]="40">
+    </amCharts>
+  </app-card>
+  <app-card style="width: 50%; padding: 0.5vh 0.5vw; margin: 2vh 2vw;">
+    
+    <amCharts
+      id="chartdiv2"
+      [options]="barChartOptions"
+      [style.width.%]="100"
+      [style.height.vh]="40">
+    </amCharts>
+    
+  </app-card>
+</div>
+<div row content-padded align-start nowrap>
+  <app-card style="width: 50%; padding: 0.5vh 0.5vw; margin: 2vh 2vw;">
+    
+    <amCharts
+      id="chartdiv3"
+      [options]="pieChartOptions"
+      [style.width.%]="100"
+      [style.height.vh]="40">
+    </amCharts>
+    
+  </app-card>
+  <app-card
+    style="width: 50%; padding: 0.5vh 0.5vw; margin: 2vh 2vw;">
+    
+    <amCharts
+      id="chartdiv4"
+      [options]="pyramidOptions"
+      [style.width.%]="100"
+      [style.height.vh]="40">
+    </amCharts>
+    
+  </app-card>
+</div>
+

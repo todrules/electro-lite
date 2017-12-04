@@ -1,0 +1,16 @@
+@import "../../../styles/imports";
+
+@mixin title-colors() {
+	
+	@each $key, $value in $colors {
+		
+		page-title[color="#{$key}"]:first-child {
+			color: map-get(map-get($colors, $key), base);
+		}
+		
+		page-title[contrast="#{$key}"]:first-child {
+			color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+		
+	}
+}

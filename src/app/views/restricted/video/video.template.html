@@ -1,0 +1,88 @@
+<div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 0; background-color: #000;" row content-center
+     align-center>
+  <video id="video" #myvideo controls preload="metadata" style="margin: 0 auto; height: 40vh;"
+         (timeupdate)="updateTime($event)" (ended)="hasEnded($event)">
+    <source src="/assets/videos/tears-of-steel-battle-clip-medium.mp4" type="video/mp4">
+    <source src="/assets/videos/tears-of-steel-battle-clip-medium.webm" type="video/webm">
+    <source src="/assets/videos/tears-of-steel-battle-clip-medium.ogg" type="video/ogg">
+  </video>
+</div>
+<div style="background-color: rgba(0,0,0,0.2); position: absolute; width: 100%; height: 5vh; left: 0; z-index: 10;" col content-even align-start>
+  <div row content-start align-start>
+    <div fxgrow="2">&nbsp;</div>
+    <div fxgrow="1" style="color: rgba(255, 255, 255, 0.95); font-size: calc(10px + 0.25vh);">Title:</div>
+    <div fxgrow="1" style="color: rgba(255, 255, 255, 0.95); font-size: calc(10px + 0.25vh);">Sample.mp4</div>
+    <div fxgrow="16">&nbsp;</div>
+  </div>
+  <div row content-start align-start>
+    <div fxgrow="2">&nbsp;</div>
+    <div fxgrow="1" style="color: rgba(255, 255, 255, 0.95); font-size: calc(10px + 0.25vh);">Duration:</div>
+    <div fxgrow="1" style="color: rgba(255, 255, 255, 0.95); font-size: calc(10px + 0.25vh);">{{duration}}</div>
+    <div fxgrow="16">&nbsp;</div>
+  </div>
+</div>
+<div class="control-cont" col content-start align-stretch>
+  <div style="max-width: 100%; padding: 2px;" row content-center align-stretch>
+    <div
+      style="cursor: pointer; padding: 0 2vh; margin: 0;"
+      col content-center align-center (mousedown)="volumeDown($event)">
+      <i class="ion-minus-circled" style="color: rgba(153, 255, 0, 0.9); font-size: calc(12px + 0.5vh);"></i>
+    </div>
+    <div style="padding: 0; margin: 0; color: rgba(153, 255, 0, 0.95);"
+      col content-center align-center>
+      {{volume}}
+      <i class="ion-volume-medium" style="color: rgba(153, 255, 0, 0.95); font-size: calc(12px + 1.2vh);"></i>
+    </div>
+    <div
+      style="cursor: pointer; padding: 0 2vh; margin: 0;"
+      col content-center align-center (mousedown)="volumeUp($event)">
+      <i class="ion-plus-circled" style="color: rgba(153, 255, 0, 0.9); font-size: calc(12px + 0.5vh);"></i>
+    </div>
+    <div
+      style="padding: 0 4vh; margin: 0;"
+      col content-center align-center>
+     
+    </div>
+    <div
+      style="cursor: pointer; padding: 0 4vh; border-right: 1px solid rgba(153, 255, 0, 0.3); border-left: 1px solid rgba(153, 255, 0, 0.3); margin: 0;"
+      col content-center align-center (click)="stop()">
+      <i class="ion-stop" style="color: rgba(153, 255, 0, 0.95); font-size: calc(12px + 0.7vh);"></i>
+    </div>
+    <div
+      style="cursor: pointer; padding: 0 4vh; border-right: 1px solid rgba(153, 255, 0, 0.3); border-left: 1px solid rgba(153, 255, 0, 0.3); margin: 0;"
+      col content-center align-center (click)="seekBack()">
+      <i class="ion-ios-rewind" style="color: rgba(153, 255, 0, 0.95); font-size: calc(12px + 1vh);"></i>
+    </div>
+    <div
+      style="cursor: pointer; padding: 0 4vh; border-right: 1px solid rgba(153, 255, 0, 0.3); border-left: 1px solid rgba(153, 255, 0, 0.3); margin: 0;"
+      col content-center align-center (click)="play()">
+      <i [ngClass]="isPlaying ? 'ion-ios-pause' : 'ion-ios-play' "
+         style="color: rgba(153, 255, 0, 0.95); font-size: calc(12px + 1vh);"></i>
+    </div>
+    <div
+      style="cursor: pointer; padding: 0 4vh; border-right: 1px solid rgba(153, 255, 0, 0.3); border-left: 1px solid rgba(153, 255, 0, 0.3); margin: 0;"
+      col content-center align-center (click)="seekAhead()">
+      <i class="ion-ios-fastforward" style="color: rgba(153, 255, 0, 0.95); font-size: calc(12px + 1vh);"></i>
+    </div>
+  </div>
+  <div style="background: none; width: 100%;">
+    <div style="width: 80%;" row content-apart align-start>
+      <div style="color: rgba(153, 255, 0, 0.9); line-height: calc(10px + 0.25vh); font-size: calc(10px + 0.25vh); ">
+        {{current}}
+      </div>
+      <div style="color: rgba(153, 255, 0, 0.9); line-height: calc(10px + 0.25vh); font-size: calc(10px + 0.25vh); ">
+        {{remaining}}
+      </div>
+    </div>
+  
+  </div>
+  <div style="background: none; max-width: 80%; pointer-events: none;" row content-start align-start>
+    <div style="width: 100%; height: 6px; background-color: rgba(153, 255, 0, 0.3); pointer-events: all; cursor: pointer;"
+         (click)="videoSeek($event)" #progressBar>
+      <div style="width: 100%; height: 6px; background-color: rgba(153, 255, 0, 0.9); transition: width 500ms linear;"
+           [ngStyle]="{'width': progressPct}">
+      
+      </div>
+    </div>
+  </div>
+</div>

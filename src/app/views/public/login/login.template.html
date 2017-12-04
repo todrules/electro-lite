@@ -1,0 +1,47 @@
+<app-container row content-center align-center>
+  
+  <div col content-start align-center  class="signup-bg">
+    
+    <h1 style="color: #fff; margin: 2vh 2vw;">login</h1>
+    
+    <app-card style="max-width: 350px; min-width: 350px;">
+      
+      <card-header>
+        <card-title>Please sign in...</card-title>
+      </card-header>
+      
+      <card-content >
+        <div col content-start align-start>
+          
+          <text-input
+            inputId="email"
+            min="4"
+            max="64"
+            placeholder="Your email address"
+            required="true"
+            type="email"
+            label="Email">
+          </text-input>
+  
+          <text-input
+            inputId="password"
+            min="6"
+            max="32"
+            placeholder="Enter password"
+            required="true"
+            type="password"
+            label="Password">
+          </text-input>
+          
+        </div>
+      </card-content>
+      
+      <card-footer>
+        <button app-button color="secondary">Login</button>
+      </card-footer>
+    </app-card>
+    <div style="width: 100%; text-align: center;">
+      <p style="font-size: calc(12px + 0.5vmin); color: #fff;">New user? Please <span (click)="gotoSignup(e)" style="cursor: pointer; text-decoration: underline;">Signup</span> first.</p>
+    </div>
+  </div>
+</app-container>

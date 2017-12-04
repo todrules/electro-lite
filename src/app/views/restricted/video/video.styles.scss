@@ -1,0 +1,19 @@
+
+.control-cont {
+	background-color: rgba(0, 0, 0, 0.2);
+	position: relative;
+	width: 100%;
+	left: 0;
+	top: 35vh;
+	max-height: 5vh;
+	z-index: 10;
+	padding: 0;
+	box-shadow: -1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transition: opacity 2s ease-out 1s;
+}
+
+.control-cont:hover {
+	opacity: 1;
+	transition: opacity 400ms ease-in 0s;
+}

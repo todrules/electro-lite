@@ -1,0 +1,12 @@
+<div  class="alert-danger" *ngIf="required">
+  {{validators.required}}
+</div>
+<div class="alert-danger" *ngIf="minlength">
+  {{validators.minlength}}
+</div>
+<div class="alert-danger" *ngIf="maxlength">
+  {{validators.maxlength}}
+</div>
+<div class="alert-danger" *ngIf="email">
+  {{validators.email}}
+</div>

@@ -1,0 +1,33 @@
+@import "../../../../styles/imports";
+
+card-title h4 {
+	margin: 1vmin;
+	font-size: calc(18px + 0.5vmin);
+	color: map-get(map-get($colors, dark), base);
+}
+
+card-title[theme="light"] h4 {
+	color: map-get(map-get($colors, dark), base);
+}
+
+card-title[theme="dark"] h4 {
+	color: map-get(map-get($colors, light), base);
+}
+
+@mixin cardtitle() {
+	
+	@each $key, $value in $colors {
+		
+		card-title[color="#{$key}"] h4 {
+			color: map-get(map-get($colors, $key), base);
+		}
+
+		card-title[contrast="#{$key}"] h4 {
+			color: contrastinator(map-get(map-get($colors, $key), base), map-get(map-get($colors, light), base), map-get(map-get($colors, dark), base));
+		}
+	}
+	
+}
+
+@include cardtitle();
+
